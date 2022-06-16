@@ -17,3 +17,7 @@ rootProject.name = "AndroidStudyLib"
 include ':app'
 include ':moduleMvp:libMvp'
 include ':moduleBase:libBase'
+include ':moduleAnnotation:libAnnotation'
+include ':libAnnotation'
+include ':libAnnotationCompiler'
+include ':moduleIbuttterKnife'

@@ -19,6 +19,7 @@ public class TwoActivity extends AppCompatActivity {
     @IBindView(R.id.tv_hello)
     TextView tv_hello;
 
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

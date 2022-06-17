@@ -10,10 +10,13 @@ import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity() {
 
+
     @IBindView(R.id.tv_hello)
+    @JvmField
     var tv_hello: TextView? = null
 
     @IBindView(R.id.tv_hello1)
+    @JvmField
     var tv_hello2: TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {

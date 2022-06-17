@@ -72,9 +72,9 @@ class IButterKnifeProcessor : AbstractProcessor() {
      */
     override fun process(p0: MutableSet<out TypeElement>?, p1: RoundEnvironment?): Boolean {
         msg.printMessage(Diagnostic.Kind.NOTE, "process")
-        var elements: Set<out Element> =
+        val elements: Set<Element> =
             p1?.getElementsAnnotatedWith(IBindView::class.java) ?: mutableSetOf()
-        var elementsMap: LinkedHashMap<Element, MutableList<Element>> = LinkedHashMap()
+        val elementsMap: LinkedHashMap<Element, MutableList<Element>> = LinkedHashMap()
         for (element in elements) {
             msg.printMessage(
                 Diagnostic.Kind.NOTE,
@@ -119,8 +119,9 @@ class IButterKnifeProcessor : AbstractProcessor() {
                 val utilsClassName = ClassName.get("com.tikou.moduleibuttterknife","Utils")
                 val resId = element.getAnnotation(IBindView::class.java).value
                 //constructorMethodBuilder.addStatement("target.${filedName}=${utilsClassName}.findViewById(activity,${resId})")
-                constructorMethodBuilder.addStatement("target.\$L = \$T.Companion.findViewById(target,\$L)",filedName,utilsClassName,resId)
-
+                //constructorMethodBuilder.addStatement("target.\$L = \$T.Companion.findViewById(target,\$L)",filedName,utilsClassName,resId)
+                constructorMethodBuilder.addStatement("target.${element} = " +
+                        "target.findViewById(${element.getAnnotation(IBindView::class.java).value})")
             }
 
             classBuilder.addMethod(unBindMethodBuilder.build())

@@ -7,7 +7,7 @@ package com.tikou.libannotation
  * @Email wangweitikou1994@gmail.com
  * @Des
  */
-@Target(AnnotationTarget.FIELD, AnnotationTarget.PROPERTY)
+@Target(AnnotationTarget.FIELD)
 @Retention(AnnotationRetention.BINARY)
 annotation class IBindView(val value: Int) {
 }

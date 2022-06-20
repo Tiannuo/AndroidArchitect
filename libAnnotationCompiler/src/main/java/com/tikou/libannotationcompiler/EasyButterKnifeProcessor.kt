@@ -26,10 +26,10 @@ import javax.tools.Diagnostic
  * @Des
  */
 //@AutoService(Processor::class)
-class ButterKnifeProcessor : AbstractProcessor() {
+class EasyButterKnifeProcessor : AbstractProcessor() {
     private lateinit var filer: Filer
     private lateinit var messager: Messager
-    private val UNBINDER = ClassName.get("com.tikou.moduleibuttterknife", "UnBinder")
+    private val UNBINDER = ClassName.get("com.tikou.moduleibuttterknife", "UnEasyBinder")
     // 因为是java module，所以引用Android View需要手动ClassName.get
     private val VIEW = ClassName.get("android.view", "View")
     private val ON_CLICK_LISTENER = ClassName.get("android.view.View", "OnClickListener")

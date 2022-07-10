@@ -1,5 +1,6 @@
 package com.tikou.androidstudylib.dagger2
 
+import com.tikou.androidstudylib.dagger2.scope.AppScope
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -15,7 +16,7 @@ import javax.inject.Singleton
 @Module
 class HttpDataModule {
     //需要使用单例的具体对象使用Singleton ，其module不需要
-    @Singleton
+    @AppScope
     @Provides
     public fun providerHttpObject(): HttpDataObject {
         return HttpDataObject()

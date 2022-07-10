@@ -14,8 +14,8 @@ class DaggerActivity2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dagger2)
 
-        // dagger注入方式二
-/*        DaggerDaggerComponent2.builder().httpDataModule(HttpDataModule())
+        // dager注入方式二
+/*        DaggerDaggerComponent2g.builder().httpDataModule(HttpDataModule())
             .build().injectActivity(this)*/
 
         //全局单例注入

@@ -4,6 +4,7 @@ import android.app.Application
 import com.tikou.androidstudylib.dagger2.DaggerDaggerSingletonComponent
 import com.tikou.androidstudylib.dagger2.DaggerSingletonComponent
 import com.tikou.androidstudylib.dagger2.HttpDataModule
+import com.tikou.androidstudylib.di.DaggerPresenterComponent
 
 /**
  * @Author TIKOU
@@ -16,6 +17,7 @@ class MyApp : Application() {
     private var daggerSingleComponent: DaggerSingletonComponent =
         DaggerDaggerSingletonComponent.builder()
             .httpDataModule(HttpDataModule())
+            .presenterComponent(DaggerPresenterComponent.create())
             .build()
 
     fun getDaggerSingleComponent() = daggerSingleComponent

@@ -7,6 +7,7 @@ import android.view.View
 import com.orhanobut.logger.Logger
 import com.tikou.androidstudylib.MyApp
 import com.tikou.androidstudylib.R
+import com.tikou.androidstudylib.di.Presenter
 import javax.inject.Inject
 
 class DaggerActivity : AppCompatActivity() {
@@ -16,6 +17,11 @@ class DaggerActivity : AppCompatActivity() {
     @Inject
     lateinit var httpDataObject2: HttpDataObject
 
+    @Inject
+    lateinit var presenter1: Presenter
+
+    @Inject
+    lateinit var presenter2: Presenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +43,9 @@ class DaggerActivity : AppCompatActivity() {
         httpDataObject1.str = "onPause"
         Logger.i("DaggerActivityCode" + httpDataObject2.str)
         Logger.i("DaggerActivityCode" + httpDataObject2.str)
+        Logger.i("DaggerActivityCode" + presenter1.hashCode())
+        Logger.i("DaggerActivityCode" + presenter2.hashCode())
+        Logger.i("DaggerActivityCode onPause")
     }
 
 }

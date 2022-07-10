@@ -6,5 +6,5 @@ package com.tikou.androidstudylib.dagger2
  * @Email 1320917731@qq.com & wangweitikou1994@gmail.com
  * @Description dagger2 网络数据类
  */
-class HttpDataObject {
+class HttpDataObject(var str: String = "") {
 }

@@ -12,10 +12,11 @@ import com.tikou.androidstudylib.dagger2.HttpDataModule
  * @Description
  */
 class MyApp : Application() {
+    //DaggerSingletonComponent 持有的 module中的被Singleton修饰的对象数据全局共享，相当于于一个静态量
     private var daggerSingleComponent: DaggerSingletonComponent =
         DaggerDaggerSingletonComponent.builder()
             .httpDataModule(HttpDataModule())
             .build()
 
-    public fun getDaggerSingleComponent() = daggerSingleComponent
+    fun getDaggerSingleComponent() = daggerSingleComponent
 }

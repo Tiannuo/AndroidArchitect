@@ -31,4 +31,12 @@ class DaggerActivity : AppCompatActivity() {
             startActivity(intent)
         }, 2000)
     }
+
+    override fun onPause() {
+        super.onPause()
+        httpDataObject1.str = "onPause"
+        Logger.i("DaggerActivityCode" + httpDataObject2.str)
+        Logger.i("DaggerActivityCode" + httpDataObject2.str)
+    }
+
 }
